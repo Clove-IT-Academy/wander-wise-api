@@ -5,5 +5,5 @@ POST {{baseUrl}}/baggages
 Content-Type: application/json
 
 {
-    "name": "Shoes"
+    "name": ""
 }
