@@ -7,3 +7,9 @@ Content-Type: application/json
 {
     "name": ""
 }
+
+### Get all baggages
+GET {{baseUrl}}/baggages
+
+### Get a specific baggage
+GET {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db5
