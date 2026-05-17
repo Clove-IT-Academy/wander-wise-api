@@ -12,4 +12,4 @@ Content-Type: application/json
 GET {{baseUrl}}/baggages
 
 ### Get a specific baggage
-GET {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db5
+GET {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db6
