@@ -12,4 +12,16 @@ Content-Type: application/json
 GET {{baseUrl}}/baggages
 
 ### Get a specific baggage
-GET {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db6
+GET {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db5
+
+### update a specific baggage
+PATCH {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db5
+Content-Type: application/json
+
+{
+    "name": "T Shirt",
+    "completed": true
+}
+
+### Delete a specific baggage
+DELETE  {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db5
