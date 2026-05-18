@@ -1,4 +1,5 @@
 @baseUrl = http://localhost:5000
+@baggageId=69fda8214a5f6f66e7b79db5
 
 ### Create Baggage Data
 POST {{baseUrl}}/baggages
@@ -12,10 +13,10 @@ Content-Type: application/json
 GET {{baseUrl}}/baggages
 
 ### Get a specific baggage
-GET {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db5
+GET {{baseUrl}}/baggages/{{baggageId}}
 
 ### update a specific baggage
-PATCH {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db5
+PATCH {{baseUrl}}/baggages/{{baggageId}}
 Content-Type: application/json
 
 {
@@ -24,4 +25,4 @@ Content-Type: application/json
 }
 
 ### Delete a specific baggage
-DELETE  {{baseUrl}}/baggages/69fda8214a5f6f66e7b79db5
+DELETE  {{baseUrl}}/baggages/{{baggageId}}
