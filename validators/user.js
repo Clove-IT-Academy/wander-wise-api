@@ -1,5 +1,6 @@
 import User from "../models/user.js";
 import { validate } from "./validate.js";
+import { ValidationError } from "../errors/validation.js";
 
 export const createUserValidator = [
     body("name").notEmpty().withMessage("Name is required"),
@@ -11,7 +12,7 @@ export const createUserValidator = [
         .custom(async (value) => {
         const user = await User.findOne({ email: value });
             if (user) {
-                throw new Error("This email has already been taken");
+                throw new ValidationError("This email has already been taken");
             }
             return true;
         }),
