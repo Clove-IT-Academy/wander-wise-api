@@ -26,3 +26,13 @@ Content-Type: application/json
 
 ### Delete a specific baggage
 DELETE  {{baseUrl}}/baggages/{{baggageId}}
+
+### create a user
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "name": "Test User",
+    "email": "user@test.com",
+    "password": "abcdefgh"
+}
