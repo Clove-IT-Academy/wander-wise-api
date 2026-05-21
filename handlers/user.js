@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createUserValidator } from "../validators/user.js";
-import { create, getAll } from "../services/user.js";
+import { create, getAll, getOne } from "../services/user.js";
 
 const USER_ROUTER = Router();
 
@@ -17,6 +17,15 @@ USER_ROUTER.get("/", async (req, res, next) => {
     try {
         const users = await getAll();
         res.status(200).json({ data: users });
+    } catch (error) {
+        next(error);
+    }
+});
+
+USER_ROUTER.get("/:id", async (req, res, next) => {
+    try {
+        const user = await getOne(req.params.id);
+        res.status(200).json({ data: user });
     } catch (error) {
         next(error);
     }

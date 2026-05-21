@@ -10,3 +10,8 @@ export const getAll = async () => {
     const users = await User.find({}, { password: 0 });
     return users;
 }
+
+export const getOne = async (_id) => {
+    const user = await User.findById(_id);
+    return user;
+}

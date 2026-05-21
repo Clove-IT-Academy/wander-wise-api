@@ -1,5 +1,6 @@
 @baseUrl = http://localhost:5000
 @baggageId=69fda8214a5f6f66e7b79db5
+@userId=6a0d7bd025c80f9ab50dbf7e
 
 ### Create Baggage Data
 POST {{baseUrl}}/baggages
@@ -39,3 +40,6 @@ Content-Type: application/json
 
 ### Get all users
 GET {{baseUrl}}/users
+
+### Get specific user
+GET {{baseUrl}}/users/{{userId}}
