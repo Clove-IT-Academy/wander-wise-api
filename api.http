@@ -33,6 +33,9 @@ Content-Type: application/json
 
 {
     "name": "Test User",
-    "email": "user@test.com",
+    "email": "user@test5.com",
     "password": "abcdefgh"
 }
+
+### Get all users
+GET {{baseUrl}}/users
