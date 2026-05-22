@@ -14,8 +14,8 @@ export const createUserValidator = [
         .withMessage("Email is required")
         .isEmail()
         .withMessage("Invalid email")
+        .normalizeEmail()
         .trim()
-        .escape()
         .custom(async (value) => {
             const user = await User.findOne({ email: value });
                 if (user) {
@@ -28,7 +28,36 @@ export const createUserValidator = [
         .withMessage("Password is required")
         .isLength({ min: 8 })
         .withMessage("Password must be at least 8 characters long")
+        .trim(),
+    validate
+];
+
+export const updateUserValidator = [
+    body("name")
+        .optional()
         .trim()
         .escape(),
+    body("email")
+        .optional()
+        .isEmail()
+        .withMessage("Invalid email")
+        .normalizeEmail()
+        .trim()
+        .custom(async (value, { req }) => {
+            const user = await User.findOne({
+                email: value,
+                _id: { $ne: req.params.id }
+            });
+
+            if (user) {
+                throw new ValidationError("This email has already been taken");
+            }
+            return true;
+        }),
+    body("password")
+        .optional()
+        .isLength({ min: 8 })
+        .withMessage("Password must be at least 8 characters long")
+        .trim(),
     validate
 ];
