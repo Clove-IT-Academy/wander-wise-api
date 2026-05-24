@@ -54,3 +54,22 @@ Content-Type: application/json
 
 ### Delete specific user
 DELETE {{baseUrl}}/users/{{userId}}
+
+### register a user
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+    "name": "Test User",
+    "email": "user@test.com",
+    "password": "abcdefgh"
+}
+
+### login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "user@test.com",
+    "password": "abcdefgh"
+}
