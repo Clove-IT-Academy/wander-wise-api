@@ -23,7 +23,7 @@ export const update = async (_id, data) => {
         _id,
         data,
         {
-            new: true,
+            returnDocument: 'after',
             projection: {
                 password: 0
             }
