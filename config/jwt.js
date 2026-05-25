@@ -6,3 +6,8 @@ export const generateAccessToken = async (data) => { // data => { userId: user._
     });
     return token;
 }
+
+export const verifyAccessToken = (token) => {
+    const decoded = jwt.verify(token, process.env.JWT_KEY);
+    return decoded?.userId;
+}
