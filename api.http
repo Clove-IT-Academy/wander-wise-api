@@ -9,7 +9,7 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "name": "socks"
+    "name": "trousers"
 }
 
 ### Get all baggages
