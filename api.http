@@ -1,24 +1,29 @@
 @baseUrl = http://localhost:5000
 @baggageId=69fda8214a5f6f66e7b79db5
 @userId=6a101b7eedadcec939f59a31
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTEyYmY2NjUyODZkMzc2N2JhYThlNjciLCJpYXQiOjE3Nzk4Njg2NDYsImV4cCI6MTc3OTk1NTA0Nn0.nbJm1ebR-a6fAbK2JNc_OEBZSu_e0jL6eCLm7mZ6fYE
 
 ### Create Baggage Data
 POST {{baseUrl}}/baggages
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-    "name": ""
+    "name": "socks"
 }
 
 ### Get all baggages
 GET {{baseUrl}}/baggages
+Authorization: Bearer {{token}}
 
 ### Get a specific baggage
 GET {{baseUrl}}/baggages/{{baggageId}}
+Authorization: Bearer {{token}}
 
 ### update a specific baggage
 PATCH {{baseUrl}}/baggages/{{baggageId}}
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "name": "T Shirt",
@@ -27,10 +32,12 @@ Content-Type: application/json
 
 ### Delete a specific baggage
 DELETE  {{baseUrl}}/baggages/{{baggageId}}
+Authorization: Bearer {{token}}
 
 ### create a user
 POST {{baseUrl}}/users
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "name": "Test User",
@@ -40,13 +47,16 @@ Content-Type: application/json
 
 ### Get all users
 GET {{baseUrl}}/users
+Authorization: Bearer {{token}}
 
 ### Get specific user
 GET {{baseUrl}}/users/{{userId}}
+Authorization: Bearer {{token}}
 
 ### update a user
 PATCH {{baseUrl}}/users/{{userId}}
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "email": "user@test2.com"
@@ -54,6 +64,7 @@ Content-Type: application/json
 
 ### Delete specific user
 DELETE {{baseUrl}}/users/{{userId}}
+Authorization: Bearer {{token}}
 
 ### register a user
 POST {{baseUrl}}/auth/register
