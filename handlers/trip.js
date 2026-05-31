@@ -65,3 +65,5 @@ TRIP_ROUTER.delete(
     }
   }
 );
+
+export default TRIP_ROUTER;
