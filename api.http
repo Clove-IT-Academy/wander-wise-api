@@ -2,7 +2,7 @@
 @baggageId=69fda8214a5f6f66e7b79db5
 @userId=6a101b7eedadcec939f59a31
 @tripId=693e924a2c8a2493945185af
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTEyYmY2NjUyODZkMzc2N2JhYThlNjciLCJpYXQiOjE3Nzk4Njg2NDYsImV4cCI6MTc3OTk1NTA0Nn0.nbJm1ebR-a6fAbK2JNc_OEBZSu_e0jL6eCLm7mZ6fYE
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTEyYmY2NjUyODZkMzc2N2JhYThlNjciLCJpYXQiOjE3ODAzMDQxMjUsImV4cCI6MTc4MDM5MDUyNX0.zG594DAMqhmbc07XrWrbInGAUMmMFHwNep8_14mwZRw
 
 ### Create Baggage Data
 POST {{baseUrl}}/baggages
@@ -102,7 +102,7 @@ Authorization: Bearer {{token}}
 }
 
 ### Get all trips
-GET {{baseUrl}}/trips/{{tripId}}
+GET {{baseUrl}}/trips
 Authorization: Bearer {{token}}
 
 ### Get a trip by id

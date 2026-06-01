@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { create, destroy, getAll, getOne, update } from "../services/trip";
+import { create, destroy, getAll, getOne, update } from "../services/trip.js";
 import { createTripValidator, updateTripValidator } from "../validators/trip.js";
 
 const TRIP_ROUTER = Router();
@@ -21,7 +21,7 @@ TRIP_ROUTER.get(
   "/",
   async (req, res, next) => {
     try {
-      const trips = await getAll(req.body, req.user);
+      const trips = await getAll(req.user);
       res.status(200).json({ data: trips });
     } catch (error) {
       next(error);
