@@ -1,7 +1,7 @@
 @baseUrl = http://localhost:5000
 @baggageId=69fda8214a5f6f66e7b79db5
 @userId=6a101b7eedadcec939f59a31
-@tripId=693e924a2c8a2493945185af
+@tripId=6a1d49114e674a5a5c86baf5
 @token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTEyYmY2NjUyODZkMzc2N2JhYThlNjciLCJpYXQiOjE3ODAzMDQxMjUsImV4cCI6MTc4MDM5MDUyNX0.zG594DAMqhmbc07XrWrbInGAUMmMFHwNep8_14mwZRw
 
 ### Create Baggage Data
@@ -126,3 +126,14 @@ Authorization: Bearer {{token}}
 ### Delete a trip
 DELETE {{baseUrl}}/trips/{{tripId}}
 Authorization: Bearer {{token}}
+
+### send trip invitation
+POST {{baseUrl}}/trips/{{tripId}}/invite
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "collaboratorEmails": [
+        "shashankj677@gmail.com"
+    ]
+}

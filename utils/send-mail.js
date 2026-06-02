@@ -25,3 +25,5 @@ const sendMail = async (to, subject, data) => {
         html
     });
 }
+
+export default sendMail;
