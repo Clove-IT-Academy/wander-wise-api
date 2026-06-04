@@ -2,7 +2,8 @@
 @baggageId=69fda8214a5f6f66e7b79db5
 @userId=6a101b7eedadcec939f59a31
 @tripId=6a1d49114e674a5a5c86baf5
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTEyYmY2NjUyODZkMzc2N2JhYThlNjciLCJpYXQiOjE3ODAzMDQxMjUsImV4cCI6MTc4MDM5MDUyNX0.zG594DAMqhmbc07XrWrbInGAUMmMFHwNep8_14mwZRw
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTEyYmY2NjUyODZkMzc2N2JhYThlNjciLCJpYXQiOjE3ODA1NjMzMjMsImV4cCI6MTc4MDY0OTcyM30.IZvWuGEJHqceeKZI26EyGKj_JTurA1ZVs58XTb0c8aY
+@invitationToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmlwSWQiOiI2YTFkNDkxMTRlNjc0YTVhNWM4NmJhZjUiLCJpYXQiOjE3ODA1NjMzNDEsImV4cCI6MTc4MDU2Njk0MX0.SHyIUg4np0SmcneAr5qDz-BEsom-ceQRHkgA0nFjidU
 
 ### Create Baggage Data
 POST {{baseUrl}}/baggages
@@ -137,3 +138,7 @@ Authorization: Bearer {{token}}
         "shashankj677@gmail.com"
     ]
 }
+
+### Accept invite
+GET {{baseUrl}}/trips/{{tripId}}/invite/accept?token={{invitationToken}}
+Authorization: Bearer {{token}}

@@ -7,5 +7,5 @@ export const generateAccessToken = async (data, expiresIn = process.env.JWT_EXPI
 
 export const verifyAccessToken = (token) => {
     const decoded = jwt.verify(token, process.env.JWT_KEY);
-    return decoded?.userId;
+    return decoded?.userId ?? decoded?.tripId;
 }
