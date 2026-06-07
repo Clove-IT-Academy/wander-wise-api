@@ -1,5 +1,6 @@
 @baseUrl = http://localhost:5000
 @baggageId=69fda8214a5f6f66e7b79db5
+@itineraryId=6a228c7e50d985552f4ff3c6
 @userId=6a101b7eedadcec939f59a31
 @tripId=6a228c7e50d985552f4ff3c5
 @token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTEyYmY2NjUyODZkMzc2N2JhYThlNjciLCJpYXQiOjE3ODA1NjMzMjMsImV4cCI6MTc4MDY0OTcyM30.IZvWuGEJHqceeKZI26EyGKj_JTurA1ZVs58XTb0c8aY
@@ -34,6 +35,74 @@ Authorization: Bearer {{token}}
 
 ### Delete a specific baggage
 DELETE  {{baseUrl}}/{{tripId}}/baggages/{{baggageId}}
+Authorization: Bearer {{token}}
+
+### Create Itinerary
+POST {{baseUrl}}/{{tripId}}/itineraries
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "trip": "{{tripId}}",
+    "title": "Day 1 in Pokhara",
+    "description": "Arrival, lake walk, and dinner near Lakeside.",
+    "date": "2025-12-15",
+    "activities": [
+        {
+            "name": "Check in at hotel",
+            "time": "14:00",
+            "notes": [
+                "Confirm lake-view room",
+                "Ask about breakfast timing"
+            ]
+        },
+        {
+            "name": "Walk around Phewa Lake",
+            "time": "17:00",
+            "notes": [
+                "Bring a light jacket"
+            ]
+        }
+    ]
+}
+
+### Get all itineraries
+GET {{baseUrl}}/{{tripId}}/itineraries
+Authorization: Bearer {{token}}
+
+### Get a specific itinerary
+GET {{baseUrl}}/{{tripId}}/itineraries/{{itineraryId}}
+Authorization: Bearer {{token}}
+
+### Update a specific itinerary
+PATCH {{baseUrl}}/{{tripId}}/itineraries/{{itineraryId}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "Day 1 in Pokhara - Lakeside",
+    "description": "Arrival, sunset walk, and dinner near Lakeside.",
+    "date": "2025-12-15",
+    "activities": [
+        {
+            "name": "Check in at hotel",
+            "time": "14:00",
+            "notes": [
+                "Confirm lake-view room"
+            ]
+        },
+        {
+            "name": "Dinner at Lakeside",
+            "time": "19:30",
+            "notes": [
+                "Reserve a table"
+            ]
+        }
+    ]
+}
+
+### Delete a specific itinerary
+DELETE {{baseUrl}}/{{tripId}}/itineraries/{{itineraryId}}
 Authorization: Bearer {{token}}
 
 ### create a user
