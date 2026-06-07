@@ -1,4 +1,4 @@
-import Itinerary from "../models/itinerary";
+import Itinerary from "../models/itinerary.js";
 import { getOne as getTrip } from "./trip.js";
 import { ValidationError } from "../errors/validation.js";
 import { NotFoundError } from "../errors/not-found.js";
